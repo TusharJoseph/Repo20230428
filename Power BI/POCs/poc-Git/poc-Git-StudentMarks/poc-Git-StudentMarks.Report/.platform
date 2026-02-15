@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "poc-Git-StudentMarks"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5f2f674b-e3ee-4a48-b085-c0a251d960de"
+  }
+}
