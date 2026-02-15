@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "b6a4bc8086d928100d96",
+  "position": {
+    "x": 194.8548551902042,
+    "y": 157.80498835826396,
+    "z": 0,
+    "height": 477.5316169450075,
+    "width": 1005.8352736226738,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "shtStudentMarks"
+                    }
+                  },
+                  "Property": "Student Name"
+                }
+              },
+              "queryRef": "shtStudentMarks.Student Name",
+              "nativeQueryRef": "Student Name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "shtStudentMarks"
+                        }
+                      },
+                      "Property": "Marks%"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(shtStudentMarks.Marks%)",
+              "nativeQueryRef": "Average of Marks%",
+              "format": "0%;-0%;0%"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "shtStudentMarks"
+                      }
+                    },
+                    "Property": "Marks%"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0.8D"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5dbd9412c40810af785e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "shtStudentMarks"
+              }
+            },
+            "Property": "Student Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "06820eb62af718950a80",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "shtStudentMarks"
+                  }
+                },
+                "Property": "Marks%"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
