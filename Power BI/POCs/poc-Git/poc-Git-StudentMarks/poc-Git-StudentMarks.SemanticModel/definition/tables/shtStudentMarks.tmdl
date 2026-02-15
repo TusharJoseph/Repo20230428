@@ -40,7 +40,7 @@ table shtStudentMarks
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\Rofin\OneDrive\Desktop\tmp-PBI-Git\SrcDB.xlsx"), null, true),
+				    Source = Excel.Workbook(Web.Contents("https://raw.githubusercontent.com/TusharJoseph/Repo20230428/main/Power BI/POCs/poc-Git/SrcDB.xlsx"), null, true),
 				    shtStudentMarks_Sheet = Source{[Item="shtStudentMarks",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(shtStudentMarks_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Student Name", type text}, {"Subject Name", type text}, {"Marks", Int64.Type}}),
